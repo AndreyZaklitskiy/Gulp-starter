@@ -1,0 +1,14 @@
+header {
+	background-color: yellow;
+	font-size: 40px;
+	font-weight: bold;
+	@include ph;
+}
+
+
+
+@media (max-width: 700px) {
+	header{
+		background-color: red;
+	}
+}

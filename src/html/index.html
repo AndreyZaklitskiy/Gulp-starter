@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	@@include("chunk/header.html")
+	<h1 class="title">Main !!!!!!</h1>
+	<picture>
+		<source srcset="img/head-slider.webp" type="image/webp">
+		<img src="img/head-slider.jpeg" alt="some img" width="500">
+	</picture>
+	<img src="img/head-slider.jpeg" alt="some img" width="500">
+	<!-- Так можно выводить повторяющиеся компоненты (новости, карточки товаров, списки...) -->
+	@@loop("chunk/news-item.html", "../../data/news.json")
+
+	@@include("chunk/footer.html")
+
+	<script src="js/main.js"></script>
+</body>
+</html>

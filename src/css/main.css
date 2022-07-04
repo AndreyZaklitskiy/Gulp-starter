@@ -1,0 +1,22 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-size: 22px;
+	font-family: Arial;
+	line-height: 1.5;
+	display: grid;
+}
+
+.title {
+
+}
+@import "block/header.css";
+
+
+@media (max-width: 700px) {
+	.title {
+		text-align: center;
+	}
+}
