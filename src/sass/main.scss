@@ -1,36 +1,48 @@
-$base-font-size: 22px;
+// Настройки
+@import "_config/variables";
+@import "_config/fonts";
 
-@mixin ph {
-	@media(max-width: 700px) {
-		@content;
-	}
-}
+// Миксины
+@import "_mixins/reset";
+@import "_mixins/media";
+@import "_mixins/container";
+@import "_mixins/flex";
 
 
-* {
+*,
+*::before,
+*::after {
 	box-sizing: border-box;
 }
 
-body {
-	font-size: 22px;
-	font-family: Arial;
-	line-height: 1.5;
-	display: grid;
-	@include ph;
+html, body {
+	@include reset-model;
+	min-height: 100vh;
+	overflow-x: hidden;
+	background-color: #fff;
+
+	@include Roboto-Regular;
+	font-size: $font-size-base;
+	line-height: $line-height-base;
 }
 
-.title {
-
-}
-header {
-	background: url("../img/head-slide.jpg") no-repeat / cover;
+// Изображения
+img {
+	max-width: 100%;
 }
 
+// Ограничение для макета
+.wrapper {
+	@include wrapper;
+	background-color: $color-bg-base;
+	color: $color-text-base;
+}
+
+// Контентная область
+.container {
+	@include container;
+}
+
+
+// Блоки
 @import "block/*.scss";
-
-
-@media (max-width: 700px) {
-	.title {
-		text-align: center;
-	}
-}
